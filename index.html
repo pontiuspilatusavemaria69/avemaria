@@ -5,6 +5,31 @@
 @media(max-width:760px){.container{width:calc(100% - 28px)}.links a:not(.nav-cta){display:none}.nav{height:65px}.logo{font-size:19px}.logo-icon{width:33px;height:33px}.nav-cta{font-size:12px;padding:10px 12px}.top-strip .right{display:none}.hero .container{padding:30px 0}.hero h1{font-size:clamp(38px,8vw,55px)}.lead{font-size:14px}.city-search{flex-direction:column}.city-search select,.city-search button{min-height:48px}.hero-visual{display:none}.visual-tall{border-radius:17px}.visual-small{border-radius:17px}.stat-float{top:10px;right:10px;padding:6px 9px}.stat-float b{font-size:18px}.feature-main{min-height:0}.sect{padding:34px 0 14px}.sect-head{align-items:flex-start}.sect-head h2{font-size:30px}.count{display:none}.vip-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.standard-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.photo,.profile.vip .photo{height:clamp(205px,48vw,310px)}.profile-info,.profile.vip .profile-info{padding:12px}.profile-name,.profile.vip .profile-name{font-size:17px}.profile-description{font-size:11px;min-height:0}.call{font-size:12px;padding:10px 6px}.vip-chip{font-size:9px;padding:6px 8px;top:8px;left:8px}.photo .hint{font-size:9px;bottom:7px;left:7px}.section-tools{flex-wrap:wrap}.section-tools select{width:100%;flex-basis:100%}.footer{padding-bottom:110px}.footer-content{display:block}.footer-links{margin-top:18px}.mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:35;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:9px 13px;background:#101014f5;border-top:1px solid #ffffff1a;backdrop-filter:blur(14px)}.mobile-nav a{text-align:center;border-radius:11px;padding:12px 8px;font-weight:800;font-size:13px}.mobile-nav a:first-child{background:linear-gradient(135deg,#eec795,#d89a5d);color:#251607}.mobile-nav a:last-child{background:#29262a;color:#f7e4cf}}
 @media(max-width:390px){.vip-grid,.standard-grid{grid-template-columns:1fr}.photo,.profile.vip .photo{height:440px}.profile-info,.profile.vip .profile-info{padding:16px}.profile-name,.profile.vip .profile-name{font-size:20px}.profile-description{font-size:12px}.visual-small{display:none}.hero-visual{grid-template-columns:1fr;height:320px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.profile,.call{transition:none}}
+
+/* Profil-Fotogalerie: Die anderen 49 Profilkarten bleiben unveraendert. */
+.gallery-tap{position:absolute;inset:0;z-index:2;width:100%;height:100%;border:0;padding:0;background:transparent;cursor:zoom-in}
+.gallery-tap:focus-visible{outline:3px solid var(--gold);outline-offset:-5px;border-radius:16px}
+.photo .hint,.vip-chip{pointer-events:none}
+.gallery-count{position:absolute;z-index:4;top:14px;right:14px;background:#08080bba;color:#fff;border:1px solid #ffffff45;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:800;pointer-events:none;backdrop-filter:blur(8px)}
+.gallery-overlay[hidden]{display:none!important}
+.gallery-overlay{position:fixed;inset:0;z-index:150;display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(0,0,0,.9);backdrop-filter:blur(12px)}
+.gallery-dialog{width:min(990px,100%);max-height:calc(100dvh - 28px);overflow:auto;background:#141419;border:1px solid #ffffff35;border-radius:20px;box-shadow:0 30px 110px #000b}
+.gallery-toolbar{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #ffffff20}
+.gallery-toolbar strong{flex:1;font:800 15px Manrope,'DM Sans',sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gallery-toolbar span{font-weight:800;font-size:12px;color:var(--gold-2);white-space:nowrap}
+.gallery-control{display:grid;place-items:center;background:#29232a;color:#fff;border:1px solid #ffffff35;border-radius:12px;min-width:42px;height:42px;font-size:29px;line-height:1}
+.gallery-control:hover{background:#3b3137}
+.gallery-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:220px;background:#070708;overflow:hidden}
+.gallery-stage img{width:100%;height:min(65dvh,750px);min-height:220px;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.gallery-stage .gallery-control{position:absolute;z-index:2;top:50%;transform:translateY(-50%);background:#000b;border:1px solid #ffffff55;min-width:46px;height:50px}
+.gallery-stage .gallery-control:hover{background:#000e}
+#galleryPrevious{left:12px}#galleryNext{right:12px}
+.gallery-thumbnails{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;scrollbar-width:thin;justify-content:flex-start}
+.gallery-thumbnail{flex:none;width:65px;height:72px;border-radius:9px;padding:2px;background:#27232a;border:2px solid transparent;opacity:.63;cursor:pointer;overflow:hidden}
+.gallery-thumbnail img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+.gallery-thumbnail[aria-pressed="true"]{border-color:var(--gold);opacity:1}
+.gallery-help{margin:0;padding:0 16px 12px;font-size:11px;color:#a79b91}
+@media(max-width:760px){.gallery-overlay{padding:0}.gallery-dialog{max-height:100dvh;border-radius:0;border:0}.gallery-stage img{height:min(65dvh,750px)}.gallery-thumbnail{width:58px;height:67px}.gallery-count{top:8px;right:8px;font-size:10px;padding:5px 9px}.gallery-stage .gallery-control{min-width:40px;height:46px}#galleryPrevious{left:6px}#galleryNext{right:6px}}
 </style></head>
 <body data-city="" data-root="" data-single="1">
 <div class="top-strip"><div class="container"><span><b>18+</b> · Premium ilan vitrini</span><span class="right">81 İL · 50 İLAN ALANI · 5 VIP</span></div></div>
@@ -22,6 +47,15 @@
 <footer class="footer"><div class="container footer-content"><div><strong>ESCORT<span style="color:var(--gold)">.</span> TÜRKİYE</strong><p>Yalnızca yetişkinlere yönelik bir reklam vitrini için hazırlanmış tasarım önizlemesi. İlanlar gerçek kişileri temsil etmez. Yayın öncesinde içerik izinleri, işletmeci bilgileri ve yasal metinler tamamlanacaktır.</p><div class="foot-note">© 2026 · Tasarım önizlemesi · 18+</div></div><div class="footer-links"><a href="#sehir-sec">Şehirler</a><a href="#vip">VIP</a><a href="#ilanlar">İlanlar</a></div></div></footer>
 <nav class="mobile-nav"><a href="#vip">✦ VIP Profiller</a><a href="#ilanlar">⌖ İlanlar</a></nav>
 <div class="modal-screen" id="ageOverlay" role="dialog" aria-modal="true" aria-labelledby="ageTitle"><div class="age-modal"><span class="age">18+</span><h2 id="ageTitle">Yetişkin ziyaretçiler için</h2><p>Bu sayfa bir tasarım önizlemesidir. Devam etmek için 18 yaşından büyük olduğunuzu onaylayın.</p><button class="gold-btn" type="button" id="ageAccept">18 Yaşından Büyüğüm</button><a href="about:blank" id="ageExit" class="leave">Sayfadan Ayrıl</a></div></div>
+
+<div id="profileGallery" class="gallery-overlay" role="dialog" aria-modal="true" aria-label="Profil fotoğraf galerisi" hidden>
+  <div class="gallery-dialog">
+    <div class="gallery-toolbar"><strong id="galleryTitle">Profil fotoğrafları</strong><span id="galleryCounter">1 / 7</span><button class="gallery-control" id="galleryClose" type="button" aria-label="Galeriyi kapat">×</button></div>
+    <div class="gallery-stage" id="galleryStage"><button class="gallery-control" id="galleryPrevious" type="button" aria-label="Önceki fotoğraf">‹</button><img id="galleryImage" alt="" decoding="async"><button class="gallery-control" id="galleryNext" type="button" aria-label="Sonraki fotoğraf">›</button></div>
+    <div class="gallery-thumbnails" id="galleryThumbnails" aria-label="Fotoğraf küçük resimleri"></div>
+    <p class="gallery-help">Fotoğraflar arasında geçiş yapmak için ok tuşlarını veya mobilde kaydırmayı kullanın. ESC ile kapatın.</p>
+  </div>
+</div>
 <script>window.SITE_DATA={
   "provinces": [
     {
@@ -352,12 +386,21 @@
   "listings": [
     {
       "slot": 1,
-      "name": "Örnek Profil 01",
-      "city": "İstanbul",
+      "name": "Ella",
+      "city": "Denizli",
       "district": "",
       "description": "Gerçek kişiler yerine kullanılan örnek profil alanı. Yayına geçmeden önce onaylı içerikle değiştirilecektir.",
-      "phone": "",
-      "image": "assets/photos/01.webp",
+      "phone": "+6285624657334",
+      "image": "bilder/cover.webp",
+      "images": [
+        "bilder/cover.webp",
+        "bilder/foto-02.webp",
+        "bilder/foto-03.webp",
+        "bilder/foto-04.webp",
+        "bilder/foto-05.webp",
+        "bilder/foto-06.webp",
+        "bilder/foto-07.webp"
+      ],
       "active": true,
       "vip": true
     },
@@ -912,10 +955,11 @@ const normPhone=p=>String(p||'').replace(/[\s()\-]/g,'');
 const validPhone=p=>/^\+?[0-9]{7,15}$/.test(normPhone(p));
 const svgPhone='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 2.5c-.7-.6-1.7-.7-2.4-.1l-2 1.8C1.7 4.8 1.3 5.8 1.5 7c1 6.7 8.8 14.4 15.7 15.5 1.1.2 2.2-.2 2.9-1l1.5-1.9c.6-.8.5-1.9-.2-2.5l-3.2-2.6c-.7-.6-1.6-.6-2.3-.1l-1.6 1.2c-2.6-1.2-4.8-3.3-6.1-5.9l1.1-1.6c.5-.7.5-1.6-.1-2.3z"/></svg>';
 const silhouette=`<svg viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="90" cy="76" r="40" fill="currentColor" opacity=".70"/><path d="M38 186c0-35 23-65 52-65s52 30 52 65v33H38z" fill="currentColor" opacity=".50"/><path d="M24 266c1-42 23-69 66-69s65 27 66 69" stroke="currentColor" stroke-width="30" opacity=".36"/></svg>`;
-function card(a){const isvip=a.vip===true;const fullimage=ROOT+(a.image||'');const phoneOk=validPhone(a.phone);const safeImg=String(a.image||'').startsWith('assets/photos/')&&/\.webp$/i.test(a.image);
+const safePhotoPath=p=>/^(?:assets\/photos|bilder(?:\/profil-[0-9]+)?)\/[a-zA-Z0-9_-]+\.webp$/i.test(String(p||''));
+function card(a){const isvip=a.vip===true;const fullimage=ROOT+(a.image||'');const phoneOk=validPhone(a.phone);const safeImg=safePhotoPath(a.image);const galleryItems=Array.isArray(a.images)?a.images.filter(safePhotoPath):[];const hasGallery=galleryItems.length>1;
 const colors=['linear-gradient(135deg,#49353a,#262028)','linear-gradient(140deg,#3b3441,#231d28)','linear-gradient(140deg,#524033,#272027)','linear-gradient(140deg,#363748,#1a1d29)','linear-gradient(140deg,#5d3e3e,#241d20)'];
 return `<article class="profile ${isvip?'vip':''}" style="--photo-bg:${colors[(a.slot-1)%colors.length]}">
-<div class="photo"><div class="placeholder">${silhouette}</div>${safeImg?`<img src="${esc(fullimage)}" alt="${esc(a.name)}" loading="lazy" onerror="this.remove()">`:''}${isvip?'<div class="vip-chip">✦ VIP</div>':''}<span class="hint">${isvip?'VIP · ':'İLAN · '}#${String(a.slot).padStart(2,'0')}</span></div>
+<div class="photo"><div class="placeholder">${silhouette}</div>${safeImg?`<img src="${esc(fullimage)}" alt="${esc(a.name)}" loading="${a.slot===1?'eager':'lazy'}" decoding="async" onerror="this.remove()">`:''}${hasGallery?`<button class="gallery-tap" type="button" data-gallery-slot="${a.slot}" aria-label="${esc(a.name)} — ${galleryItems.length} fotoğrafı görüntüle"></button><span class="gallery-count">▣ ${galleryItems.length} Fotoğraf</span>`:''}${isvip?'<div class="vip-chip">✦ VIP</div>':''}<span class="hint">${hasGallery?'Fotoğrafları Gör · ':isvip?'VIP · ':'İLAN · '}#${String(a.slot).padStart(2,'0')}</span></div>
 <div class="profile-info"><h3 class="profile-name">${esc(a.name)}</h3><div class="profile-meta">⌖ ${esc(a.city)}${a.district?' · '+esc(a.district):''}</div><p class="profile-description">${esc(a.description)}</p>
 ${phoneOk?`<a class="call" href="tel:${esc(normPhone(a.phone))}" aria-label="${esc(a.name)} için telefonla ara">${svgPhone} Hemen Ara</a>`:`<div class="call disabled" aria-disabled="true">${svgPhone} Demo · Numara yok</div>`}</div></article>`;}
 const heroCity=$('#heroCity'),cityFilter=$('#cityFilter'),vip=$('#vipGrid'),standard=$('#standardGrid');
@@ -936,6 +980,62 @@ cityFilter.addEventListener('change',()=>goCity(cityFilter.value));
 $('#resetButton').addEventListener('click',()=>goCity(''));
 const cityLinks=$('#cityLinks');
 DATA.provinces.forEach(p=>{const a=document.createElement('a');a.href='?il='+p.slug; a.addEventListener('click',e=>{e.preventDefault();goCity(p.slug)});a.textContent=p.name;cityLinks.append(a)});
+
+// Client-only image gallery: no user accounts, server or storage required.
+const galleryOverlay=$('#profileGallery'),galleryImage=$('#galleryImage'),galleryTitle=$('#galleryTitle');
+const galleryCounter=$('#galleryCounter'),galleryThumbnails=$('#galleryThumbnails');
+let galleryListing=null,galleryPhotos=[],galleryIndex=0,galleryTrigger=null;
+function renderGallery(){
+ if(!galleryListing||!galleryPhotos.length)return;
+ const path=galleryPhotos[galleryIndex];
+ galleryImage.src=ROOT+path;
+ galleryImage.alt=galleryListing.name+' — fotoğraf '+(galleryIndex+1)+' / '+galleryPhotos.length;
+ galleryCounter.textContent=(galleryIndex+1)+' / '+galleryPhotos.length;
+ for(const [i,button] of [...galleryThumbnails.children].entries()){
+   button.setAttribute('aria-pressed',String(i===galleryIndex));
+   if(i===galleryIndex)button.scrollIntoView({block:'nearest',inline:'nearest'});
+ }
+}
+function showGallery(a,trigger){
+ const photos=Array.isArray(a.images)?a.images.filter(safePhotoPath):[];
+ if(photos.length<2)return;
+ galleryListing=a;galleryPhotos=photos;galleryIndex=0;galleryTrigger=trigger;
+ galleryTitle.textContent=a.name;
+ galleryThumbnails.replaceChildren();
+ for(const [i,path] of photos.entries()){
+   const btn=document.createElement('button');btn.className='gallery-thumbnail';btn.type='button';
+   btn.setAttribute('aria-label','Fotoğraf '+(i+1)+' anzeigen');
+   btn.setAttribute('aria-pressed',String(i===0));
+   const image=document.createElement('img');image.src=ROOT+path;image.alt='';image.loading='lazy';
+   btn.append(image);btn.addEventListener('click',()=>{galleryIndex=i;renderGallery()});galleryThumbnails.append(btn);
+ }
+ galleryOverlay.hidden=false;document.body.style.overflow='hidden';renderGallery();$('#galleryClose').focus();
+}
+function closeGallery(){galleryOverlay.hidden=true;document.body.style.overflow='';galleryImage.removeAttribute('src');galleryListing=null;galleryPhotos=[];if(galleryTrigger&&document.contains(galleryTrigger))galleryTrigger.focus();galleryTrigger=null}
+function shiftGallery(direction){if(!galleryPhotos.length)return;galleryIndex=(galleryIndex+direction+galleryPhotos.length)%galleryPhotos.length;renderGallery()}
+document.addEventListener('click',e=>{
+ const button=e.target.closest('[data-gallery-slot]');if(!button)return;
+ const listing=DATA.listings.find(x=>x.slot===Number(button.dataset.gallerySlot));if(listing)showGallery(listing,button);
+});
+$('#galleryClose').addEventListener('click',closeGallery);
+$('#galleryPrevious').addEventListener('click',()=>shiftGallery(-1));
+$('#galleryNext').addEventListener('click',()=>shiftGallery(1));
+galleryOverlay.addEventListener('click',e=>{if(e.target===galleryOverlay)closeGallery()});
+document.addEventListener('keydown',e=>{
+ if(galleryOverlay.hidden)return;
+ if(e.key==='Escape'){e.preventDefault();closeGallery()}
+ if(e.key==='ArrowLeft'){e.preventDefault();shiftGallery(-1)}
+ if(e.key==='ArrowRight'){e.preventDefault();shiftGallery(1)}
+ if(e.key==='Tab'){
+   const focusables=[...galleryOverlay.querySelectorAll('button')];const first=focusables[0],last=focusables[focusables.length-1];
+   if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ }
+});
+let startX=null;
+$('#galleryStage').addEventListener('touchstart',e=>{startX=e.changedTouches[0]?.screenX??null},{passive:true});
+$('#galleryStage').addEventListener('touchend',e=>{if(startX===null)return;const dx=(e.changedTouches[0]?.screenX??startX)-startX;startX=null;if(Math.abs(dx)>45)shiftGallery(dx<0?1:-1)},{passive:true});
+
 const overlay=$('#ageOverlay');
 $('#ageAccept').addEventListener('click',()=>{overlay.classList.remove('open');try{sessionStorage.setItem('et_age_ok','yes')}catch(e){}});
 $('#ageExit').addEventListener('click',e=>{e.preventDefault();location.href='about:blank'});
