@@ -166,6 +166,18 @@
   .header .royal-logo-image{max-height:54px}
   .header .nav-cta{padding:8px 9px;font-size:11px}
 }
+
+/* Contact actions for occupied profiles: call and WhatsApp */
+.contact-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;width:100%}
+.contact-actions .call,.contact-actions .whatsapp{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-width:0;min-height:45px;padding:10px 7px;border-radius:12px;font-weight:850;font-size:13px;line-height:1.2;text-align:center;transition:transform .2s ease,filter .2s ease}
+.whatsapp{background:#25D366;color:#092813;border:1px solid #33e778}
+.whatsapp:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.contact-actions .whatsapp svg,.contact-actions .call svg{width:18px;height:18px;flex-shrink:0;fill:currentColor}
+.hero-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;min-height:48px;border-radius:12px;background:#25D366;color:#092813;font-weight:850;border:1px solid #33e778}
+.hero-whatsapp:hover{background:#36e579;transform:translateY(-1px)}
+.hero-whatsapp svg{width:19px;height:19px;fill:currentColor;flex-shrink:0}
+@media(max-width:760px){.contact-actions{grid-template-columns:1fr;gap:7px}.contact-actions .call,.contact-actions .whatsapp{font-size:12px;min-height:39px;padding:9px 7px}}
+@media(max-width:390px){.contact-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.contact-actions .call,.contact-actions .whatsapp{min-height:44px}}
 </style></head>
 <body data-city="" data-root="" data-single="1">
 <div class="top-strip"><div class="container"><span><b>18+</b> · VIP Profil Rehberi</span><span class="right">81 İL · 5 VIP · 45 STANDART</span></div></div>
@@ -181,6 +193,7 @@
     <div class="hero-actions">
       <button class="gold-btn hero-open-gallery" type="button" data-gallery-slot="1">▣ &nbsp; Ella’nın Fotoğrafları</button>
       <a class="hero-call" href="tel:+6285624657334" aria-label="Ella’yı telefonla ara">☎ &nbsp; Hemen Ara</a>
+      <a class="hero-whatsapp" id="heroWhatsApp" href="https://wa.me/6285624657334" target="_blank" rel="noopener noreferrer" aria-label="Ella’ya WhatsApp üzerinden yaz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 14.92L2 22l5.25-1.37A10 10 0 1 0 12 2Zm0 18a8.1 8.1 0 0 1-4.1-1.11l-.3-.18-3.08.8.83-3-.2-.32A8.08 8.08 0 1 1 12 20Zm4.45-5.95c-.25-.13-1.5-.73-1.73-.81-.23-.09-.4-.13-.58.13-.17.25-.66.8-.81.96-.15.17-.29.19-.54.07a6.62 6.62 0 0 1-1.97-1.21 7.5 7.5 0 0 1-1.37-1.7c-.14-.25-.02-.38.1-.51l.38-.44.26-.42a.46.46 0 0 0-.02-.44l-.78-1.9c-.21-.5-.42-.43-.58-.44h-.49a.95.95 0 0 0-.69.33 2.91 2.91 0 0 0-.91 2.16 5.1 5.1 0 0 0 1.07 2.7 11.66 11.66 0 0 0 4.5 3.97 5.6 5.6 0 0 0 2.49.58 2.12 2.12 0 0 0 1.42-1.02 1.78 1.78 0 0 0 .12-1.02c-.05-.1-.21-.17-.46-.29Z"/></svg> WhatsApp</a>
     </div>
     <div class="hero-facts"><span>✦ Ella · VIP</span><span>⌖ Denizli</span><span>▣ 7 Fotoğraf</span><span>◈ 49 İlan Alanı Müsait</span></div>
     <form id="heroForm" class="city-search"><select id="heroCity" aria-label="İl seç"><option value="">Tüm Türkiye · Şehir seçiniz</option></select><button class="gold-btn" type="submit">Şehre Göre Ara →</button></form>
@@ -558,6 +571,7 @@
       "district": "",
       "description": "Denizli’de Ella: Palmiye manzaralı teras, havuz başı ve güneşli dış mekân fotoğraflarıyla öne çıkan zarif bir stil. Yedi fotoğraflık galeriyi inceleyin.",
       "phone": "+6285624657334",
+      "whatsapp": "+6285624657334",
       "image": "cover.webp",
       "active": true,
       "vip": true
@@ -1114,6 +1128,8 @@ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const normPhone=p=>String(p||'').replace(/[\s()\-]/g,'');
 const validPhone=p=>/^\+?[0-9]{7,15}$/.test(normPhone(p));
 const svgPhone='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 2.5c-.7-.6-1.7-.7-2.4-.1l-2 1.8C1.7 4.8 1.3 5.8 1.5 7c1 6.7 8.8 14.4 15.7 15.5 1.1.2 2.2-.2 2.9-1l1.5-1.9c.6-.8.5-1.9-.2-2.5l-3.2-2.6c-.7-.6-1.6-.6-2.3-.1l-1.6 1.2c-2.6-1.2-4.8-3.3-6.1-5.9l1.1-1.6c.5-.7.5-1.6-.1-2.3z"/></svg>';
+const svgWhatsapp='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 14.92L2 22l5.25-1.37A10 10 0 1 0 12 2Zm0 18a8.1 8.1 0 0 1-4.1-1.11l-.3-.18-3.08.8.83-3-.2-.32A8.08 8.08 0 1 1 12 20Zm4.45-5.95c-.25-.13-1.5-.73-1.73-.81-.23-.09-.4-.13-.58.13-.17.25-.66.8-.81.96-.15.17-.29.19-.54.07a6.62 6.62 0 0 1-1.97-1.21 7.5 7.5 0 0 1-1.37-1.7c-.14-.25-.02-.38.1-.51l.38-.44.26-.42a.46.46 0 0 0-.02-.44l-.78-1.9c-.21-.5-.42-.43-.58-.44h-.49a.95.95 0 0 0-.69.33 2.91 2.91 0 0 0-.91 2.16 5.1 5.1 0 0 0 1.07 2.7 11.66 11.66 0 0 0 4.5 3.97 5.6 5.6 0 0 0 2.49.58 2.12 2.12 0 0 0 1.42-1.02 1.78 1.78 0 0 0 .12-1.02c-.05-.1-.21-.17-.46-.29Z"/></svg>';
+const whatsappNumber=a=>String(a.whatsapp||a.phone||'').replace(/\D/g,'');
 const silhouette=`<svg viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="90" cy="76" r="40" fill="currentColor" opacity=".70"/><path d="M38 186c0-35 23-65 52-65s52 30 52 65v33H38z" fill="currentColor" opacity=".50"/><path d="M24 266c1-42 23-69 66-69s65 27 66 69" stroke="currentColor" stroke-width="30" opacity=".36"/></svg>`;
 const safePhotoPath=p=>/^(?:(?:assets\/photos|bilder(?:\/profil-[0-9]+)?)\/)?[a-zA-Z0-9_-]+\.webp$/i.test(String(p||''));
 function card(a){
@@ -1140,7 +1156,7 @@ function card(a){
  return `<article class="profile ${isvip?'vip':''}" style="${baseStyle}">
  <div class="photo"><div class="placeholder">${silhouette}</div>${safeImg?`<img src="${esc(fullimage)}" data-fallback-src="${esc(ROOT+fallback)}" alt="${esc(a.name)}" loading="${a.slot===1?'eager':'lazy'}" decoding="async" onerror="if(this.dataset.fallbackSrc){this.src=this.dataset.fallbackSrc;delete this.dataset.fallbackSrc}else{this.remove()}">`:''}${hasGallery?`<button class="gallery-tap" type="button" data-gallery-slot="${a.slot}" aria-label="${esc(a.name)} fotoğraflarını görüntüle" hidden></button><span class="gallery-count" hidden>▣ Fotoğrafları Gör</span>`:''}${isvip?'<div class="vip-chip">✦ VIP</div>':''}<span class="hint">${isvip?'VIP · ':'İLAN · '}#${slotNumber}</span></div>
  <div class="profile-info"><h3 class="profile-name">${esc(a.name)}</h3><div class="profile-meta">⌖ ${esc(a.city)}${a.district?' · '+esc(a.district):''}</div><p class="profile-description">${esc(a.description)}</p>
- ${phoneOk?`<a class="call" href="tel:${esc(normPhone(a.phone))}" aria-label="${esc(a.name)} için telefonla ara">${svgPhone} Hemen Ara</a>`:`<div class="call disabled" aria-disabled="true">${svgPhone} Telefon numarası eklenmedi</div>`}</div></article>`;
+ ${phoneOk?`<div class="contact-actions"><a class="call" href="tel:${esc(normPhone(a.phone))}" aria-label="${esc(a.name)} için telefonla ara">${svgPhone} Ara</a>${validPhone(a.whatsapp||a.phone)?`<a class="whatsapp" href="https://wa.me/${whatsappNumber(a)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(a.name)} için WhatsApp üzerinden iletişime geç">${svgWhatsapp} WhatsApp</a>`:''}</div>`:`<div class="call disabled" aria-disabled="true">${svgPhone} Telefon numarası eklenmedi</div>`}</div></article>`;
 }
 // Display a gallery control only for listings whose cover.webp is available.
 document.addEventListener('load',event=>{
@@ -1150,6 +1166,13 @@ document.addEventListener('load',event=>{
  box.querySelector('[data-gallery-slot]')?.removeAttribute('hidden');
  box.querySelector('.gallery-count')?.removeAttribute('hidden');
 },true);
+const featuredProfile=DATA.listings.find(a=>a.slot===1);
+const heroWA=$('#heroWhatsApp');
+if(heroWA){
+ const available=featuredProfile?.active!==false&&validPhone(featuredProfile?.whatsapp||featuredProfile?.phone);
+ if(available){heroWA.href='https://wa.me/'+whatsappNumber(featuredProfile);heroWA.setAttribute('aria-label',featuredProfile.name+' için WhatsApp üzerinden iletişime geç');}
+ else {heroWA.hidden=true;}
+}
 const heroCity=$('#heroCity'),cityFilter=$('#cityFilter'),vip=$('#vipGrid'),standard=$('#standardGrid');
 DATA.provinces.forEach(p=>{for(const select of [heroCity,cityFilter]){let o=document.createElement('option');o.value=p.slug;o.textContent=p.name;select.append(o)}});
 const qsCity=new URLSearchParams(location.search).get('il')||''; const activeCity=DATA.provinces.find(x=>x.name===CITY||x.slug===qsCity);
