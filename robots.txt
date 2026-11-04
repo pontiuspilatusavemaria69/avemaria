@@ -1,0 +1,5 @@
+# Royal Eskort - offizielle Website
+User-agent: *
+Allow: /
+
+Sitemap: https://royal-eskort.de/sitemap.xml
